@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TravelTales Design System - Premium Minimalist Editorial */
+
+@layer base {
+  :root {
+    /* TravelTales Brand Colors */
+    --tt-linen: 45 25% 96%;
+    --tt-charcoal: 0 0% 16%;
+    --tt-ink: 240 5% 6%;
+    --tt-accent: 180 28% 32%;
+    --tt-accent-light: 180 28% 88%;
+    --tt-gold: 41 35% 58%;
+    --tt-gold-light: 41 35% 95%;
+    
+    /* Semantic Design Tokens */
+    --background: var(--tt-linen);
+    --foreground: var(--tt-charcoal);
+    
+    --card: 0 0% 100%;
+    --card-foreground: var(--tt-charcoal);
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--tt-charcoal);
+    
+    --primary: var(--tt-accent);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--tt-accent-light);
+    --secondary-foreground: var(--tt-accent);
+    
+    --muted: 45 15% 94%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: var(--tt-gold);
+    --accent-foreground: var(--tt-ink);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 45 15% 90%;
+    --input: 45 15% 90%;
+    --ring: var(--tt-accent);
+    
+    --radius: 1rem;
+    
+    /* Premium Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--tt-charcoal) / 0.1);
+    --shadow-medium: 0 8px 24px -4px hsl(var(--tt-charcoal) / 0.12);
+    --shadow-large: 0 20px 40px -8px hsl(var(--tt-charcoal) / 0.15);
+    
+    /* Editorial Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    
+    /* Premium Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-base: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+  }
+
+  .dark {
+    /* TravelTales Dark Mode */
+    --background: var(--tt-ink);
+    --foreground: var(--tt-linen);
+
+    --card: 240 5% 12%;
+    --card-foreground: var(--tt-linen);
+
+    --popover: 240 5% 12%;
+    --popover-foreground: var(--tt-linen);
+
+    --primary: var(--tt-accent);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 20%;
+    --secondary-foreground: var(--tt-linen);
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 45 15% 70%;
+
+    --accent: var(--tt-gold);
+    --accent-foreground: var(--tt-ink);
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: var(--tt-accent);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-feature-settings: "kern" 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary/20;
+  }
+}
